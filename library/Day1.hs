@@ -2,7 +2,21 @@ module Day1 where
 
 import Control.Arrow
 import Data.Char
+import Flow
+
+captchaWithShift :: Int -> String -> Int
+captchaWithShift n =
+  fmap digitToInt
+  .> (id &&& cycle .> drop n)
+  .> uncurry zip
+  .> filter (uncurry (==))
+  .> fmap fst
+  .> sum
 
 captcha :: String -> Int
-captcha =
-  sum . fmap fst . filter (uncurry (==)) . uncurry zip . (id &&& drop 1 . cycle) . fmap digitToInt
+captcha = captchaWithShift 1
+
+captcha2 :: String -> Int
+captcha2 input =
+  let shift = length input `div` 2
+  in captchaWithShift shift input

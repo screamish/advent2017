@@ -38,6 +38,7 @@ library:
   dependencies:
   - base
   - text
+  - flow
   source-dirs: library
 default-extensions:
   - OverloadedStrings

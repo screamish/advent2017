@@ -36,4 +36,4 @@ spec_day2 = parallel $ do
                         3 8 6 5|]
       Day2.checksum2 input `shouldBe` 9
     it "solves part 2" $ do
-      Day2.checksum2 input `shouldBe` 36174
+      Day2.checksum2 input `shouldBe` 244

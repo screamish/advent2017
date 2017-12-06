@@ -20,7 +20,7 @@ checksum2 :: String -> Int
 checksum2 =
   let firstDivisors :: [Int] -> Int
       firstDivisors xs =
-        head [x `quot` y | x <- xs, y <- delete x xs, x `rem` y == 0]
+        head [q | x <- xs, y <- delete x xs, (q,0) <- [x `divMod` y]]
       lineChecksum =
         words
         .> fmap read

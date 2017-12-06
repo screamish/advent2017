@@ -43,6 +43,7 @@ library:
 default-extensions:
   - OverloadedStrings
   - ScopedTypeVariables
+  - QuasiQuotes
 license: MIT
 maintainer: Author name here
 name: advent2017
@@ -52,9 +53,11 @@ tests:
     dependencies:
     - base
     - advent2017
+    - here
     - hspec
     - tasty
     - tasty-hspec
+    - tasty-discover
     ghc-options:
     - -rtsopts
     - -threaded
